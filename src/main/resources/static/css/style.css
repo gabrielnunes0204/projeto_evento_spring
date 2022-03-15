@@ -1,0 +1,239 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Nunito";
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+}
+
+header {
+	grid-column: 1/9;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: #5A55F0;
+	padding: 30px;
+}
+
+header a {
+	color: #fff;
+}
+
+header a:first-child {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+/**/
+.lista_eventos {
+	grid-column: 1/9;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.lista_eventos #nome {
+	color: #000;
+}
+
+.lista_eventos .lista_titulos {
+	font-size: 1.25rem;
+	font-weight: bold;
+	background: #373737;
+	color: #fff;
+}
+
+.lista_eventos td {
+	border: 1px dotted rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	width: 200px;
+	text-align: center;
+}
+
+.lista_eventos td #abrir {
+	font-weight: bold;
+	color: #121212;
+}
+
+.lista_eventos .botao_acao {
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #121212;
+	padding: 8px;
+	margin-right: 5px;
+	transition: all 0.3s;
+}
+
+.titulo_tabela {
+	grid-column: 1 / 9;
+	font-size: 2rem;
+	text-align: center;
+	margin: 30px 0 0 0;
+}
+
+.botoes {
+	display: flex;
+	justify-content: center;
+}
+
+.botoes img {
+	width: 30px;
+}
+
+/**/
+.cadastro_eventos {
+	grid-column: 1 / 9;
+	margin: 0 auto;
+}
+
+.cadastro_eventos label {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-top: 25px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.cadastro_eventos input {
+	font-family: "Nunito";
+	font-size: 1.25rem;
+	padding: 8px;
+	width: 350px;
+	outline: 0;
+}
+
+.cadastro_eventos button {
+	font-family: "Nunito";
+	font-size: 1.25rem;
+	font-weight: bold;
+	background: #3355F0;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	padding: 12px;
+	width: 350px;
+	margin-top: 30px;
+	display: block;
+	transition: all 0.3s;
+	cursor: pointer;
+	color: #fff;
+}
+
+.cadastro_eventos button:hover {
+	background: #4286F0;
+}
+
+/**/
+.evento_detalhes {
+	grid-column: 2/8;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.evento {
+	margin-top: 40px;
+}
+
+.evento h2 {
+	font-size: 2rem;
+	margin-bottom: 15px;
+}
+
+.evento p {
+	font-size: 1.15rem;
+	margin: 0 0 20px 0;
+}
+
+/**/
+.cadastro_participante {
+	margin-top: 30px;
+}
+
+.cadastro_participante label {
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.cadastro_participante input {
+	font-family: "Nunito";
+	font-size: 1.15rem;
+	padding: 8px;
+	width: 350px;
+	outline: 0;
+}
+
+.cadastro_participante button {
+	font-family: "Nunito";
+	font-size: 1.15rem;
+	font-weight: bold;
+	background: #3355F0;
+	color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.5);
+	padding: 10px;
+	width: 350px;
+	margin-top: 20px;
+	display: block;
+	transition: all 0.3s;
+	cursor: pointer;
+}
+
+.cadastro_participante button:hover {
+	background: #4286F0;
+}
+
+/**/
+.lista_participantes {
+	grid-column: 1/9;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.lista_participantes #nome {
+	color: #000;
+}
+
+.lista_participantes .lista_titulos {
+	font-size: 1.25rem;
+	font-weight: bold;
+	background: #373737;
+	color: #fff;
+}
+
+.lista_participantes td {
+	border: 1px dotted rgba(0, 0, 0, 0.5);
+	padding: 15px;
+	width: 200px;
+	text-align: center;
+}
+
+.lista_participantes .botao_acao {
+	font-weight: bold;
+	letter-spacing: 1px;
+	color: #121212;
+	padding: 8px;
+	margin-right: 5px;
+	transition: all 0.3s;
+}
+
+/**/
+.sucesso {
+	grid-column: 1/9;
+	background: forestgreen;
+	color: #fff;
+	font-weight: bold;
+	padding: 20px;
+	text-align: center;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Cadastro </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <header>
+      <a href="/cadastro"> Cadastro de Eventos </a>
+      <a href="/"> <strong>☰</strong> Lista de Eventos </a>
+    </header>
+    
+    <div th:if="${evento_cadastrado}" th:text="${evento_cadastrado}" class="sucesso"></div>
+
+	<h1 class="titulo_tabela"> Faça seu Cadastro </h1>
+    <section class="cadastro_eventos">
+      <form action="/salvar" method="POST">
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome" name="nome" class="campos_evento" placeholder="Informe o nome do evento">
+
+        <label for="local"> Local: </label>
+        <input type="text" id="local" name="local" class="campos_evento" placeholder="Informe o local do evento (Prédio, Sala)">
+
+        <label for="data"> Data: </label>
+        <input type="text" id="data" name="data" class="campos_evento" placeholder="Data do evento (dd/mm/aaaa)">
+
+        <label for="horario"> Horário: </label>
+        <input type="text" id="horario" name="horario" class="campos_evento" placeholder="Horário do evento (hh:mm)">
+
+        <button id="botao_evento"> Salvar </button>
+      </form>
+    </section>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

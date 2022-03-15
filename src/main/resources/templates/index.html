@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Home </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <header>
+      <a href="/"> Lista de Eventos </a>
+      <a href="/cadastro"> <strong>+</strong> Cadastrar Evento </a>
+    </header>
+
+	<div th:if="${evento_excluido}" th:text="${evento_excluido}" class="sucesso"></div>
+	<div th:if="${evento_alterado}" th:text="${evento_alterado}" class="sucesso"></div>
+
+	<h1 class="titulo_tabela"> Lista de Eventos </h1>
+    <section class="lista_eventos">
+      <table>
+        <tr class="lista_titulos">
+          <td> ID Evento </td>
+          <td> Nome </td>
+          <td> Local </td>
+          <td> Data </td>
+          <td> Horário </td>
+          <td> Ver </td>
+          <td> Ações </td>
+        </tr>
+        <tr th:each="evento : ${listaEventos}">
+          <td th:text="${evento.id}"> </td>
+          <td th:text="${evento.nome}"> </td>
+          <td th:text="${evento.local}"> </td>
+          <td th:text="${evento.data}"> </td>
+          <td th:text="${evento.horario}"> </td>
+          <td> <a id="abrir" th:href="@{/abrir/{id}(id=${evento.id})}"> Abrir </a></td>
+          <td class="botoes">
+            <a href="" class="botao_acao" th:href="@{/chamarAlterarEvento/{id}(id=${evento.id})}"> <img src="/imagens/alterar.png" alt="Alterar"> </a>
+            <a href="" class="botao_acao" th:href="@{/deletar/{id}(id=${evento.id})}"> <img src="/imagens/deletar.png" alt="Deletar"> </a>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

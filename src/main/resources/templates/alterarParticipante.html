@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Alterar Participante </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <header>
+      <a href="/alterarParticipante"> Alterar Participante </a>
+      <a href="/"> <strong>☰</strong> Lista de Participantes </a>
+    </header>
+    
+	<h1 class="titulo_tabela"> Faça a alteração </h1>
+    <section class="cadastro_eventos">
+      <form action="/alterarParticipante" method="POST" th:object="${participante}">
+      	<input type="hidden" id="id" name="id">
+      
+        <label for="nome"> Nome: </label>
+        <input type="text" id="nome" name="nome" th:field="${participante.nome}" class="campos_participante" placeholder="Informe o nome do participante">
+  
+        <label for="cpf"> CPF: </label>
+        <input type="text" id="cpf" name="cpf" class="campos_participante" th:field="${participante.cpf}" placeholder="Informe o CPF do participante">
+  
+        <label for="dataNascimento"> Data Nascimento: </label>
+        <input type="text" id="dataNascimento" name="dataNascimento" class="campos_participante" th:field="${participante.dataNascimento}" placeholder="Data nascimento (dd/mm/aaaa)">
+  
+        <button id="botao_participante"> Alterar </button>
+      </form>
+    </section>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>

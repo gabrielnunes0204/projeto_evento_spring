@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Evento </title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  
+  <div class="container">
+    <header>
+      <a href="/evento"> Evento </a>
+      <a href="/"> <strong>&#171;</strong> Lista de Eventos </a>
+    </header>
+    
+    <div th:if="${participante_cadastrado}" th:text="${participante_cadastrado}" class="sucesso"></div>
+    <div th:if="${participante_excluido}" th:text="${participante_excluido}" class="sucesso"></div>
+    <div th:if="${participante_alterado}" th:text="${participante_alterado}" class="sucesso"></div>
+
+    <div class="evento_detalhes">
+      <section class="evento" th:object="${evento}">
+        <h2> Detalhes do Evento </h2>
+  
+        <p> <strong> Nome: </strong> <span th:text="${evento.nome}"> </span></p>
+        <p> <strong> Local: </strong> <span th:text="${evento.local}"> </span></p>
+        <p> <strong> Data: </strong> <span th:text="${evento.data}"> </span></p>
+        <p> <strong> Horário: </strong> <span th:text="${evento.horario}"> </span> horas</p>
+      </section>
+  
+      <section class="cadastro_participante">
+  	  	<h1 class="titulo_tabela"> Cadastro Participante </h1>
+        <form action="/adicionar" method="POST">
+          <label for="nome"> Nome: </label>
+          <input type="text" id="nome" name="nome" class="campos_participante" placeholder="Informe o nome do participante">
+  
+          <label for="cpf"> CPF: </label>
+          <input type="text" id="cpf" name="cpf" class="campos_participante" placeholder="Informe o CPF do participante">
+  
+          <label for="dataNascimento"> Data Nascimento: </label>
+          <input type="text" id="dataNascimento" name="dataNascimento" class="campos_participante" placeholder="Data nascimento (dd/mm/aaaa)">
+  
+          <button id="botao_participante"> Adicionar </button>
+        </form>
+      </section>
+    </div>
+
+    <h1 class="titulo_tabela"> Lista de Participantes </h1>
+    <section class="lista_participantes">
+      <table>
+        <tr class="lista_titulos">
+          <td> ID Participante </td>
+          <td> Nome </td>
+          <td> CPF </td>
+          <td> Data Nascimento </td>
+          <td> Ações </td>
+        </tr>
+        <tr th:each="aluno : ${participantes}">
+           <td th:text="${aluno.id}"> </td>
+          <td th:text="${aluno.nome}"> </td>
+          <td th:text="${aluno.cpf}"> </td>
+          <td th:text="${aluno.dataNascimento}"> </td>
+          <td class="botoes">
+            <a href="" class="botao_acao" th:href="@{/chamarAlterarParticipante/{id}(id=${aluno.id})}"> <img src="/imagens/alterar.png" alt="Alterar"> </a>
+            <a href="" class="botao_acao" th:href="@{/excluir/{id}(id=${aluno.id})}"> <img src="/imagens/deletar.png" alt="Deletar"> </a>
+          </td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
